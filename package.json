@@ -1,14 +1,14 @@
 {
   "name": "jsegret",
   "version": "1.0.0",
-  "description": "A javascript library.",
-  "main": "index.js",
+  "description": "A jQuery clone with a lot less.",
+  "main": "/js/jsegret.js",
   "scripts": {
-    "test": "run"
+    "test": "index.html"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iannhigginson/jsegret.git"
+    "url": "https://github.com/iannhigginson/jsegret"
   },
   "keywords": [
     "javascript"
