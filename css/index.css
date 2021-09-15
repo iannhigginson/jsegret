@@ -1,0 +1,12 @@
+body {
+ font-family: "Arial", sans-serif;
+ font-size: 14px;
+ color: #fff;
+ background: #333;
+}
+
+.container {
+ width: 540px;
+ margin: 40px auto;
+ overflow: auto;
+}

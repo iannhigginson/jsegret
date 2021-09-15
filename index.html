@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>jsegret</title>
+ <link rel="icon" href="favicon.ico" />
+ <link rel="stylesheet" href="./css/index.css" />
+ <script src="./js/jsegret.js"></script>
+ <script type="text/javascript">
+  $.ready(() => {
+
+   $.css('#container',
+    `border: #000 solid thin;
+     margin-left:25%;
+     margin-right:25%;
+     padding-left:5px;
+     padding-right:5px;
+     width:800px;
+    `);
+
+   $.css('#header', 'text-align:center');
+   $('#header').innerHTML = "Hello World!";
+
+   $.get("./json/a.json", data => {
+
+    let dataObj = JSON.parse(data);
+    let out = '';
+
+    dataObj.name = 'Joe Stanley Soap';
+    dataObj.age = '21';
+    dataObj.gender = 'Male';
+
+    for (let key in dataObj) {
+     out += `${key}: ${dataObj[key]};<br>`;
+    }
+
+    $('#get').innerHTML = out;
+
+    $.post('./php/a.php', JSON.stringify(dataObj), (r) => {
+
+     let response = r.trim();
+     console.log({ response });
+
+     $('#post').innerHTML = r;
+
+    });
+
+    /**
+     * This comes back as a collection of elements.
+    */
+    console.log($('.one'));
+    console.log($('.two'));
+
+    $.css('.title',
+     `background-color: #c0c0c0;
+      border-radius: 5px;
+      color: #000;
+      padding: 5px;
+      text-align: center;
+     `);
+
+    $.css('.data',
+     `background-color: #c8c8c8;
+      border-radius: 5px;
+      color: #000;
+      padding: 5px;
+     `);
+
+   });
+
+  });
+ </script>
+
+</head>
+
+<body>
+
+ <div id="container">
+  <h1 id="header"></h1>
+  <h2 class="title">jsegret $.get</h2>
+  <p class="data" id="get"></p>
+  <h2 class="title">jsegret $.post</h2>
+  <p class="data" id="post"></p>
+ </div>
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "jsegret",
+  "version": "1.0.0",
+  "description": "A javascript library.",
+  "main": "index.js",
+  "scripts": {
+    "test": "run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iannhigginson/jsegret.git"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "Ian Neal Higginson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iannhigginson/jsegret/issues"
+  },
+  "homepage": "https://github.com/iannhigginson/jsegret#readme",
+  "dependencies": {
+    "jshint": "^2.13.1"
+  }
+}
