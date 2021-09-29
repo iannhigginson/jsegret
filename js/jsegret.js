@@ -69,6 +69,24 @@ $.get = (url, callback) => {
 };
 //#endregion get
 
+//#region post
+/**
+ *
+  $.post('./php/a.php', JSON.stringify(dataObj), (response) => {
+   console.log({response});
+  });
+ */
+$.post = (url, request, callback) => {
+ var httpRequest = new XMLHttpRequest();
+ httpRequest.onreadystatechange = () => {
+  if (httpRequest.readyState == 4 && httpRequest.status == 200)
+   callback(httpRequest.responseText);
+ };
+ httpRequest.open("POST", url, true);
+ httpRequest.send(request);
+};
+//#endregion post
+
 //#region ready
 $.ready = (...args) => {
  document.addEventListener('DOMContentLoaded', () => {
@@ -89,23 +107,5 @@ $.ready = (...args) => {
 
 };
 //#endregion ready
-
-//#region post
-/**
- *
-  $.post('./php/a.php', JSON.stringify(dataObj), (response) => {
-   console.log({response});
-  });
- */
-$.post = (url, request, callback) => {
- var httpRequest = new XMLHttpRequest();
- httpRequest.onreadystatechange = () => {
-  if (httpRequest.readyState == 4 && httpRequest.status == 200)
-   callback(httpRequest.responseText);
- };
- httpRequest.open("POST", url, true);
- httpRequest.send(request);
-};
-//#endregion post
 
 // EOF
