@@ -1,21 +1,22 @@
 /**
  *
- * jsegret.js
- * 08/08/2021
- * Ian Neal Higginson
- * iannhigginson@hotmail.com
+ * @package jsegret.js
+ * @version 1.0.221221.1603
+ * @author Ian Neal Higginson
+ * @email iannhigginson@hotmail.com
+ * @date 22/12/2021
  *
  * A very simple jQuery clone. I don't need the whole library.
  *
  */
 
-//#region $
-function $(param) {
+//#region _
+function _(param) {
  if (param.indexOf('#') === 0) {
   /**
    * This comes back as a single element (as in "id").
    * An example of how to drive it:
-   *   $('#one').innerHTML = "Hello World.";
+   *   _('#one').innerHTML = "Hello World.";
    */
   return document.getElementById(param.substr(1, param.length));
  }
@@ -23,7 +24,7 @@ function $(param) {
   /**
    * This comes back as a collection of elements (as in "class").
    * An example of how to drive it:
-   *   let one = $('.one');
+   *   let one = _('.one');
    *   for(let i = 0; i < one.length; i++){
    *    one[i].setAttribute("style", "color: black;");
    *   }
@@ -31,11 +32,11 @@ function $(param) {
   return document.querySelectorAll(param);
  }
 }
-//#endregion $
+//#endregion _
 
 //#region css
 /**
- *  $.css('.title',
+ *  _.css('.title',
         `background-color: #c0c0c0;
          border-radius: 5px;
          color: #000;
@@ -43,7 +44,7 @@ function $(param) {
          text-align: center;
          `);
  */
-$.css = (elem, style) => {
+_.css = (elem, style) => {
  let elements = document.querySelectorAll(elem);
  for (let i = 0; i < elements.length; i++) {
   elements[i].setAttribute("style", style);
@@ -54,11 +55,12 @@ $.css = (elem, style) => {
 //#region get
 /**
  *
-  $.get("./json/a.json", data => {
+  _.get("./json/a.json", data => {
    console.log(data);
   });
+
  */
-$.get = (url, callback) => {
+_.get = (url, callback) => {
  var httpRequest = new XMLHttpRequest();
  httpRequest.onreadystatechange = () => {
   if (httpRequest.readyState == 4 && httpRequest.status == 200)
@@ -72,11 +74,12 @@ $.get = (url, callback) => {
 //#region post
 /**
  *
-  $.post('./php/a.php', JSON.stringify(dataObj), (response) => {
+  _.post('./php/a.php', JSON.stringify(dataObj), (response) => {
    console.log({response});
   });
+
  */
-$.post = (url, request, callback) => {
+_.post = (url, request, callback) => {
  var httpRequest = new XMLHttpRequest();
  httpRequest.onreadystatechange = () => {
   if (httpRequest.readyState == 4 && httpRequest.status == 200)
@@ -88,11 +91,9 @@ $.post = (url, request, callback) => {
 //#endregion post
 
 //#region ready
-$.ready = (...args) => {
+_.ready = (...args) => {
  document.addEventListener('DOMContentLoaded', () => {
-
   execute = () => {
-
    var argsLen = args.length;
 
    for (i = 0; i < argsLen; i++) {
@@ -104,7 +105,6 @@ $.ready = (...args) => {
   execute();
 
  });
-
 };
 //#endregion ready
 
