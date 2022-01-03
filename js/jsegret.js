@@ -1,12 +1,12 @@
 /**
  *
  * @package jsegret.js
- * @version 1.0.221221.1603
+ * @version 1.0.03012022.2245
  * @author Ian Neal Higginson
  * @email iannhigginson@hotmail.com
- * @date 22/12/2021
+ * @date 03/01/2022
  *
- * A very simple jQuery clone. I don't need the whole library.
+ ** A very simple jQuery clone. I don't need the whole library.
  *
  */
 
