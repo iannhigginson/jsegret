@@ -1,0 +1,11 @@
+{
+ "module": "commonjs",
+ "compilerOptions": {
+  "baseUrl": ".",
+  "esModuleInterop": true,
+  "paths": {
+   "@/*": ["."]
+  }
+ },
+ "exclude": ["node_modules"]
+}
